@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://halo/buttons/MenuButton2.tscn" type="PackedScene" id=1]
+
+[node name="HighscoresButtons" instance=ExtResource( 1 )]
+margin_right = 425.0
+margin_bottom = 60.0
+
+[node name="Label" parent="." index="0"]
+text = "Highscores"
