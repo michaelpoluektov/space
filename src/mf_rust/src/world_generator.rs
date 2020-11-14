@@ -2,7 +2,6 @@ use gdnative::prelude::*;
 use rand::*;
 use gdnative::api::Node2D;
 
-
 #[derive(NativeClass)]
 #[inherit(Node)]
 #[user_data(user_data::LocalCellData<WorldGenerator>)]
@@ -36,7 +35,6 @@ impl WorldGenerator {
         let scene_id = rng.gen_range(0, enemies_scene.get_child_count());
         godot_print!("select {}", scene_id);
         if let Some(scene) = enemies_scene.get_child(scene_id).and_then(|s| unsafe {s.assume_safe() }.duplicate(15)) {
-            //.and_then(|s| (s as Ref<Node, Shared>).duplicate(15))
             if let Ok(scene) = unsafe { scene.assume_unique() }.try_cast::<Node2D>() {
                 scene.set_position(Vector2::new(0f32, 0f32));
                 owner.add_child(scene, true);

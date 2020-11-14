@@ -1,8 +1,11 @@
 mod world_generator;
+mod entity;
+mod obstacle;
 
 use gdnative::prelude::*;
 
 use crate::world_generator::WorldGenerator;
+use crate::entity::Entity;
 
 #[derive(NativeClass)]
 #[inherit(Node)]
@@ -26,6 +29,7 @@ impl HelloWorld {
 fn init(handle: InitHandle) {
     handle.add_class::<HelloWorld>();
     handle.add_class::<WorldGenerator>();
+    handle.add_class::<Entity>();
 }
 
 godot_init!(init);
