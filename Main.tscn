@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://HelloWorld.gdns" type="Script" id=1]
+[ext_resource path="res://WorldGenerator.gdns" type="Script" id=1]
+[ext_resource path="res://Enemies.tscn" type="PackedScene" id=2]
 
 [node name="Main" type="Node2D"]
 
-[node name="Node" type="Node" parent="."]
+[node name="WorldGeneratorNode" type="Node" parent="."]
 script = ExtResource( 1 )
+enemies_scene = ExtResource( 2 )
 
 [node name="MobTimer" type="Timer" parent="."]
 
