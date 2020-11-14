@@ -1,0 +1,16 @@
+[general]
+
+load_once=true
+singleton=false
+symbol_prefix="godot_"
+reloadable=true
+
+[entry]
+
+OSX.64="res://src/mf_rust/target/debug/libmf_rust.dylib"
+Windows.64="res://src/mf_rust/target/debug/libmf_rust.dll"
+X11.64="res://src/mf_rust/target/debug/libmf_rust.so"
+
+[dependencies]
+
+OSX.64=[  ]

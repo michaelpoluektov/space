@@ -1,0 +1,11 @@
+[package]
+name = "mf_rust"
+version = "0.1.0"
+authors = ["Fensiss"]
+edition = "2018"
+
+[dependencies]
+gdnative = "0.9.1"
+
+[lib]
+crate-type = ["cdylib"]

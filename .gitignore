@@ -25,4 +25,7 @@ data_*/
 # More information here https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
 Cargo.lock
 
+src/mf_rust/target/
+src/mf_rust/Cargo.lock
+
 # End of https://www.toptal.com/developers/gitignore/api/godot,rust
