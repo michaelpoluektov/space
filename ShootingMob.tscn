@@ -35,7 +35,7 @@ collider = NodePath("Area2D")
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "ufo"
-frame = 3
+frame = 1
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

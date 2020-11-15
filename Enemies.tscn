@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=1]
-[ext_resource path="res://ShootingMob.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,14 +33,32 @@ position = Vector2( 405.826, 20.337 )
 [node name="Mob3" parent="Node2D3" instance=ExtResource( 1 )]
 position = Vector2( 160.436, 138.634 )
 
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2( 0, 319.271 )
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2( -2.6386, 364.128 )
 
-[node name="Mob" parent="Node2D2" instance=ExtResource( 2 )]
-position = Vector2( 63.3265, 0 )
+[node name="Mob" parent="Node2D4" instance=ExtResource( 1 )]
+position = Vector2( 54.0121, 32.2107 )
 
-[node name="Mob2" parent="Node2D2" instance=ExtResource( 2 )]
-position = Vector2( 251.107, 87.5137 )
+[node name="Mob5" parent="Node2D4" instance=ExtResource( 1 )]
+position = Vector2( 235.196, 23.4154 )
 
-[node name="Mob3" parent="Node2D2" instance=ExtResource( 2 )]
-position = Vector2( 417.34, 0 )
+[node name="Mob2" parent="Node2D4" instance=ExtResource( 1 )]
+position = Vector2( 324.909, 135.116 )
+
+[node name="Mob4" parent="Node2D4" instance=ExtResource( 1 )]
+position = Vector2( 405.826, 20.337 )
+
+[node name="Mob3" parent="Node2D4" instance=ExtResource( 1 )]
+position = Vector2( 160.436, 138.634 )
+
+[node name="Node2D5" type="Node2D" parent="."]
+position = Vector2( -2.6386, 589.729 )
+
+[node name="Mob2" parent="Node2D5" instance=ExtResource( 1 )]
+position = Vector2( 324.909, 135.116 )
+
+[node name="Mob4" parent="Node2D5" instance=ExtResource( 1 )]
+position = Vector2( 248.829, 229.227 )
+
+[node name="Mob3" parent="Node2D5" instance=ExtResource( 1 )]
+position = Vector2( 160.436, 138.634 )
