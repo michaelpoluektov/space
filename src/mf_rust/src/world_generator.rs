@@ -2,13 +2,16 @@ use gdnative::prelude::*;
 use rand::*;
 use gdnative::api::Node2D;
 
+use crate::utils::instance_scene;
+
 #[derive(NativeClass)]
 #[inherit(Node)]
 #[user_data(user_data::LocalCellData<WorldGenerator>)]
 pub struct WorldGenerator {
     #[property]
     enemies_scene: Ref<PackedScene, Shared>,
-    level: u32
+    level: u32,
+    current_scene: Option<Ref<Node2D, Unique>>
 }
 
 #[methods]
@@ -16,7 +19,8 @@ impl WorldGenerator {
     fn new(_owner: &Node) -> Self {
         WorldGenerator {
             enemies_scene: PackedScene::new().into_shared(),
-            level: 0
+            level: 0,
+            current_scene: None
         }
     }
 
@@ -29,7 +33,7 @@ impl WorldGenerator {
     }
 
     #[export]
-    fn start_generation(&self, owner: &Node) {
+    fn start_generation(&mut self, owner: &Node) {
         let mut rng = rand::thread_rng();
         let enemies_scene: Ref<Node2D, _> = instance_scene(&self.enemies_scene);
         let scene_id = rng.gen_range(0, enemies_scene.get_child_count());
@@ -43,21 +47,4 @@ impl WorldGenerator {
             godot_error!("Cant get scene {}", scene_id);
         }
     }
-}
-
-fn instance_scene<Root>(scene: &Ref<PackedScene, Shared>) -> Ref<Root, Unique>
-where
-    Root: gdnative::GodotObject<RefKind = ManuallyManaged> + SubClass<Node>,
-{
-    let scene = unsafe { scene.assume_safe() };
-
-    let instance = scene
-        .instance(PackedScene::GEN_EDIT_STATE_DISABLED)
-        .expect("should be able to instance scene");
-
-    let instance = unsafe { instance.assume_unique() };
-
-    instance
-        .try_cast::<Root>()
-        .expect("root node type should be correct")
 }

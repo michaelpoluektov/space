@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Restart.gd" type="Script" id=1]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_top = 289.264
+margin_right = 480.0
+margin_bottom = 303.264
+rect_pivot_offset = Vector2( 219.174, -13.4337 )
+text = "Game Over"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_top = 320.791
+margin_right = 480.0
+margin_bottom = 334.791
+rect_pivot_offset = Vector2( 219.174, -13.4337 )
+text = "Score: "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 188.153
+margin_top = 366.209
+margin_right = 297.153
+margin_bottom = 390.209
+text = "Restart"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

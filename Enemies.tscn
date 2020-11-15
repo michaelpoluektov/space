@@ -1,44 +1,47 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Mob.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ShootingMob.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Node2D"]
-margin_left = 35.4884
-margin_top = 7.79013
-margin_right = 75.4884
-margin_bottom = 47.7901
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Mob" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 54.0121, 32.2107 )
 
-[node name="ColorRect2" type="ColorRect" parent="Node2D"]
-margin_left = 104.734
-margin_top = 8.2229
-margin_right = 144.734
-margin_bottom = 48.2229
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Mob2" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 265.54, 33.9698 )
+
+[node name="Mob4" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 382.958, 35.7289 )
+
+[node name="Mob3" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 156.918, 34.4095 )
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2( -2.6386, 108.183 )
+
+[node name="Mob" parent="Node2D3" instance=ExtResource( 1 )]
+position = Vector2( 54.0121, 32.2107 )
+
+[node name="Mob2" parent="Node2D3" instance=ExtResource( 1 )]
+position = Vector2( 324.909, 135.116 )
+
+[node name="Mob4" parent="Node2D3" instance=ExtResource( 1 )]
+position = Vector2( 405.826, 20.337 )
+
+[node name="Mob3" parent="Node2D3" instance=ExtResource( 1 )]
+position = Vector2( 160.436, 138.634 )
 
 [node name="Node2D2" type="Node2D" parent="."]
-position = Vector2( -0.86557, 80.0651 )
+position = Vector2( 0, 319.271 )
 
-[node name="ColorRect" type="ColorRect" parent="Node2D2"]
-margin_left = 35.4884
-margin_top = 9.08847
-margin_right = 75.4884
-margin_bottom = 49.0885
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Mob" parent="Node2D2" instance=ExtResource( 2 )]
+position = Vector2( 63.3265, 0 )
 
-[node name="ColorRect2" type="ColorRect" parent="Node2D2"]
-margin_left = 212.497
-margin_top = 17.3113
-margin_right = 252.497
-margin_bottom = 57.3113
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Mob2" parent="Node2D2" instance=ExtResource( 2 )]
+position = Vector2( 251.107, 87.5137 )
+
+[node name="Mob3" parent="Node2D2" instance=ExtResource( 2 )]
+position = Vector2( 417.34, 0 )

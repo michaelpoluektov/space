@@ -1,0 +1,20 @@
+extends ProgressBar
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	get_parent().connect("damage_taken", self, "damage_taken")
+
+func damage_taken(id, damage, health, progress):
+	set_value(100*progress)
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass

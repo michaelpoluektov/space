@@ -1,16 +1,63 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://WorldGenerator.gdns" type="Script" id=1]
-[ext_resource path="res://Enemies.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelGenrator.gd" type="Script" id=1]
+[ext_resource path="res://Destroyer.gd" type="Script" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BulletEmitter.gd" type="Script" id=4]
+[ext_resource path="res://GameOverListener.gd" type="Script" id=5]
+[ext_resource path="res://ScoreCounter.gd" type="Script" id=6]
+[ext_resource path="res://BackgroundShader.shader" type="Shader" id=7]
+[ext_resource path="res://ShaderUpdater.gd" type="Script" id=8]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 7 )
+shader_param/frame = null
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 244.393, 10 )
 
 [node name="Main" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 2 )
+margin_left = -1.14392
+margin_top = 0.57196
+margin_right = 478.856
+margin_bottom = 720.572
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+speed = 100
+
 [node name="WorldGeneratorNode" type="Node" parent="."]
 script = ExtResource( 1 )
-enemies_scene = ExtResource( 2 )
 
 [node name="MobTimer" type="Timer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 240, 450 )
+
+[node name="bullets" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="destroyer" type="Area2D" parent="."]
+position = Vector2( 0, 777.29 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="destroyer"]
+position = Vector2( 240, 0.6 )
+shape = SubResource( 1 )
+
+[node name="gameover" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="score" type="Label" parent="."]
+margin_left = 13.155
+margin_top = 10.2952
+margin_right = 53.155
+margin_bottom = 24.2952
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

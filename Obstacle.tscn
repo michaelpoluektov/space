@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="obstacle" type="Node2D"]
+
+[node name="coll" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coll"]

@@ -1,11 +1,16 @@
 mod world_generator;
 mod entity;
-mod obstacle;
+mod projectile;
+mod projectile_emitter;
+mod constants;
+mod utils;
 
 use gdnative::prelude::*;
 
 use crate::world_generator::WorldGenerator;
 use crate::entity::Entity;
+use crate::projectile::Projectile;
+use crate::projectile_emitter::ProjectileEmitter;
 
 #[derive(NativeClass)]
 #[inherit(Node)]
@@ -30,6 +35,8 @@ fn init(handle: InitHandle) {
     handle.add_class::<HelloWorld>();
     handle.add_class::<WorldGenerator>();
     handle.add_class::<Entity>();
+    handle.add_class::<Projectile>();
+    handle.add_class::<ProjectileEmitter>();
 }
 
 godot_init!(init);
