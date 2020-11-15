@@ -27,8 +27,8 @@ __meta__ = {
 "_edit_group_": true
 }
 health = 1000
-group = 1
 collider = NodePath("Area2D")
+group = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )

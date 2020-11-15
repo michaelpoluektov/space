@@ -9,17 +9,17 @@
 [ext_resource path="res://BackgroundShader.shader" type="Shader" id=7]
 [ext_resource path="res://ShaderUpdater.gd" type="Script" id=8]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 7 )
 shader_param/frame = null
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 244.393, 10 )
 
 [node name="Main" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 2 )
+[node name="background" type="ColorRect" parent="."]
+material = SubResource( 1 )
 margin_left = -1.14392
 margin_top = 0.57196
 margin_right = 478.856
@@ -28,7 +28,7 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-speed = 100
+speed = 150
 
 [node name="WorldGeneratorNode" type="Node" parent="."]
 script = ExtResource( 1 )
@@ -47,7 +47,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="destroyer"]
 position = Vector2( 240, 0.6 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="gameover" type="Node" parent="."]
 script = ExtResource( 5 )

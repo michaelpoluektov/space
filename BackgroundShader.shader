@@ -43,7 +43,7 @@ float StableStarField( in vec2 vSamplePos, float fThreshhold )
 
 void fragment() {
 	// Sky Background Color
-	vec3 vColor = vec3( 0.1, 0.2, 0.4 ) * UV.y;
+	vec3 vColor = vec3( 0.1, 0.2, 0.4 ) * (1.0-UV.x) * (1.0-UV.y+0.2)*2.0;
 
     // Note: Choose fThreshhold in the range [0.99, 0.9999].
     // Higher values (i.e., closer to one) yield a sparser starfield.
